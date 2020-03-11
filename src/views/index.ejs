@@ -1,5 +1,6 @@
 <%-   include('partials/_header') %>
 
+
   <div class="container">
       <div class="row">
           <!--FORM-->
@@ -39,7 +40,28 @@
                     </tr>
                 </thead>
                 <tbody>
+                    <% for(let task of tasks){ %>
+                        <tr>
+                            <td><%= idCont = idCont +1 %></td>
+                            <td><%= task.title %></td>
+                            <td><%= task.description %></td>
+                            <td>
+                                <a class="btn btn-dark text-white">
+                                    Done
+                                </a>
+                                <a    href="/delete/<%= task._id%>"  class="btn btn-danger text-white">
+                                    Delete
+                                </a>
+                                <a  class="btn btn-primary text-white">
+                                    Edit
+                                </a>
+                            </td>
 
+
+
+                        </tr>
+                       
+                 <%   } %>
                 </tbody>
             </table>
           </div>
